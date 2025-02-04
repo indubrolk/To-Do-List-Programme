@@ -89,7 +89,11 @@ void editTask(int index, const char* task){
 
 int main(){
 
+  int choice;
+  int indexInput;
   int running = 1;
+
+  char *taskInput;
 
   printf("\nOptions\n");
   printf("1. Add a Task\n");
@@ -106,12 +110,35 @@ int main(){
     switch (choice) {
       case 1:
         printf("Enter Task:");
-        getchar
-      case 2;
-      case 3;
-      case 4;
-      case 5;
-      case 6;
+        getchar();
+        fgets(taskInput, sizeof(taskInput), stdin);
+        taskInput[strcspn(taskInput, "\n")] = '\0';
+        addTask(taskInput);
+
+        break;
+
+      case 2:
+          listTasks();
+          break;
+      case 3:
+        printf("Enter index:");
+        scanf("%d", &indexInput);
+        markCompleted(indexInput);
+
+        break;
+
+      case 4:
+        printf("Enter index:");
+        scanf("%d", &indexInput);
+        printf("Enter new task:");
+        getchar();
+        fgets(taskInput, sizeof(taskInput), stdin);
+        taskInput[strcspn(taskInput, "\n")] = '\0';
+
+        editTask
+
+      case 5:
+      case 6:
 
       default:
         printf("Invalid Choice!!!\n");
