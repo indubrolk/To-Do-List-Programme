@@ -10,6 +10,29 @@ typedef struct {
 Task *tasks = NULL;
 int length = 0;
 
+void addTask(const char *task){
+
+
+}
+
+void listTasks(){
+
+
+}
+
+void markCompleted(){
+
+}
+
+void deleteTasks(){
+
+}
+
+void editTask(){
+
+}
+
+
 
 int main(){
   return 0;
